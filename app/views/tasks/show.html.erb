@@ -1,0 +1,18 @@
+<h1>This is Task # <%= @task.id %></h1>
+<p> - Title : <%= @task.title %> </p>
+<p> - Details : <%= @task.details %> </p>
+
+<button>
+  <%= link_to "Edit this task", edit_task_path %>
+</button>
+
+<button>
+  <%= link_to "Delete",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</button>
+
+<button>
+  <%= link_to "Back to MyTasks", tasks_path %>
+</button>

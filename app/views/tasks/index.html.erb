@@ -1,0 +1,13 @@
+<h1>My Tasks#index</h1>
+
+<ul> <% @tasks.each do |task| %>
+  <li>  <%= link_to task.title, task_path(task) %> </li>
+
+<% end %>
+</ul>
+
+<button>
+  <%= link_to "add a new task", tasks_new_path %>
+</button>
+
+<p>Find me in app/views/tasks/index.html.erb</p>

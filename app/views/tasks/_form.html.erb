@@ -1,0 +1,25 @@
+<div class="container" >
+  <%= form_with model: @task do |f| %>
+  <div class="completed">
+    <div class="label">
+      <%= f.label :title %>
+    </div>
+    <%= f.text_field :title %>
+  </div>
+  <div class="completed">
+  <div class="label">
+    <%= f.label :details %>
+  </div>
+    <%= f.text_field :details %>
+  </div>
+  <!-- Pour ne pas affchier "completed pour les nouvelles données : -->
+  <% unless f.object.new_record? %>
+    <div class="completed" >
+        <%= f.label :completed %>
+        <%= f.check_box :completed %>
+    </div>
+  <% end %>
+  <%= f.submit %>
+
+  <% end %>
+</div>
